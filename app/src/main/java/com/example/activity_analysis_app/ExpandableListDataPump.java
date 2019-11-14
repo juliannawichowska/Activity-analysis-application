@@ -1,36 +1,22 @@
 package com.example.activity_analysis_app;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.Intent;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
+
+import static com.example.activity_analysis_app.CurrentActivity.REQUEST_ENABLE_BT;
 
 public class ExpandableListDataPump {
+
     public static HashMap<String, List<String>> getData() {
+        CurrentActivity CA = new CurrentActivity();
         HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
 
-        List<String> cricket = new ArrayList<String>();
-        cricket.add("India");
-        cricket.add("Pakistan");
-        cricket.add("Australia");
-        cricket.add("England");
-        cricket.add("South Africa");
-
-        List<String> football = new ArrayList<String>();
-        football.add("Brazil");
-        football.add("Spain");
-        football.add("Germany");
-        football.add("Netherlands");
-        football.add("Italy");
-
-        List<String> basketball = new ArrayList<String>();
-        basketball.add("United States");
-        basketball.add("Spain");
-        basketball.add("Argentina");
-        basketball.add("France");
-        basketball.add("Russia");
-
-        expandableListDetail.put("CRICKET TEAMS", cricket);
-        expandableListDetail.put("FOOTBALL TEAMS", football);
-        expandableListDetail.put("BASKETBALL TEAMS", basketball);
+            expandableListDetail.put("BLUETOOTH DEVICES", CA.devices);
         return expandableListDetail;
     }
 }
