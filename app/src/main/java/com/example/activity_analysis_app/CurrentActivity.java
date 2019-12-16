@@ -29,6 +29,7 @@ public class CurrentActivity extends AppCompatActivity {
     public static int n = 0;
     BluetoothAdapter bluetoothAdapter;
     public static ArrayList<String> devices;
+    public static int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class CurrentActivity extends AppCompatActivity {
         Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
 
         if (pairedDevices.size() > 0) {
+            count = pairedDevices.size();
             // There are paired devices. Get the name and address of each paired device.
             for (BluetoothDevice device : pairedDevices) {
                 String deviceName = device.getName();

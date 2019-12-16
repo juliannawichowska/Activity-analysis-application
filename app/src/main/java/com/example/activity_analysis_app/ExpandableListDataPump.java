@@ -16,7 +16,7 @@ public class ExpandableListDataPump {
         CurrentActivity CA = new CurrentActivity();
         HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
 
-            expandableListDetail.put("BLUETOOTH DEVICES", CA.devices);
+        expandableListDetail.put("BLUETOOTH DEVICES", CA.devices);
         return expandableListDetail;
     }
 }
